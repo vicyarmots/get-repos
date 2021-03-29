@@ -1,0 +1,33 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.App {
+	display: flex;
+	justify-content: center;
+
+	width: 100vw;
+	height: 100vh;
+	background: brown;
+}
+
+.form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 800px;
+	height: 100vh;
+	background: white;
+}
+
+.list {
+	margin-top: 5rem;
+	font-size: 25px;
+}
+
+input,
+button {
+	padding: 0.5rem;
+}
