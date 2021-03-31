@@ -1,34 +1,37 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { getRepos } from '../Redux/repos/middleware';
 import ListRepos from './ListRepos';
-import { useDispatch, useSelector } from 'react-redux';
-import { getRepos } from '../Redux/middleware';
 
 function Form() {
-	const [input, setInput] = useState('');
-	const dispatch = useDispatch();
-	const repo = useSelector((state) => state.userReducer.user);
+    const [input, setInput] = useState('');
 
-	const inputHandler = (event) => {
-		setInput(event.target.value);
-	};
+    const dispatch = useDispatch();
 
-	console.log(repo);
+    const inputHandler = (event) => {
+        setInput(event.target.value);
+    };
 
-	const submitHandler = (event) => {
-		event.preventDeafult();
-		dispatch(getRepos(input));
-	};
+    const submitHandler = (event) => {
+        event.preventDefault();
+        dispatch(getRepos(input));
+    };
 
-	return (
-		<div className="form">
-			<h2>Search Github Repos</h2>
-			<form>
-				<input placeholder="username" name="user" onChange={inputHandler} />
-				<button onClick={submitHandler}>Find</button>
-			</form>
-			<ListRepos repo={repo} />
-		</div>
-	);
+    return (
+        <div className="form">
+            <h2>Search Github Repos</h2>
+            <form>
+                <input
+                    value={input}
+                    placeholder="username"
+                    name="user"
+                    onChange={inputHandler}
+                />
+                <button onClick={submitHandler}>Find</button>
+                <ListRepos />
+            </form>
+        </div>
+    );
 }
 
 export default Form;

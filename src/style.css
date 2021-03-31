@@ -7,24 +7,27 @@
 .App {
 	display: flex;
 	justify-content: center;
-
-	width: 100vw;
-	height: 100vh;
-	background: brown;
 }
 
 .form {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	width: 800px;
+	width: 1000px;
 	height: 100vh;
 	background: white;
 }
 
 .list {
-	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+
 	font-size: 25px;
+}
+
+ul {
+	margin: 10px;
 }
 
 input,
