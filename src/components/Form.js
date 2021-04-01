@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getRepos } from '../Redux/repos/middleware';
 import ListRepos from './ListRepos';
+import Header from '../common/Header/Header';
+import SeacrhForm from '../common/Form/SearchForm';
 
 function Form() {
     const [input, setInput] = useState('');
@@ -19,17 +21,14 @@ function Form() {
 
     return (
         <div className="form">
-            <h2>Search Github Repos</h2>
-            <form>
-                <input
-                    value={input}
-                    placeholder="username"
-                    name="user"
-                    onChange={inputHandler}
-                />
-                <button onClick={submitHandler}>Find</button>
-                <ListRepos />
-            </form>
+            <Header />
+            <SeacrhForm
+                input={input}
+                inputHandler={inputHandler}
+                submitHandler={submitHandler}
+                setInput={setInput}
+            />
+            <ListRepos />
         </div>
     );
 }

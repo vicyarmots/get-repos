@@ -8,6 +8,8 @@ export const getRepos = (username) => async (dispatch) => {
             `https://api.github.com/users/${username}/repos`
         );
         dispatch(setRepos(response.data));
+        const data = axios.request();
+        console.log(data);
     } catch (error) {
         console.log(error);
     }
