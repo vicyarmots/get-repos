@@ -3,10 +3,10 @@ import { setLoading, setRepos } from './action';
 
 export const getRepos = (username) => async (dispatch) => {
     try {
+        await dispatch(setLoading(true));
         const response = await axios.get(
             `https://api.github.com/users/${username}/repos`
         );
-        dispatch(setLoading(true));
         dispatch(setRepos(response.data));
     } catch (error) {
         console.log(error);

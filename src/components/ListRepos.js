@@ -7,7 +7,7 @@ function ListRepos() {
     const isLoading = useSelector(getLoading);
     return (
         <div className="list">
-            {isLoading === true ? (
+            {isLoading === false ? (
                 repos.map((item, index) => {
                     return <ul key={index}>{item.name}</ul>;
                 })

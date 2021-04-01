@@ -6,7 +6,7 @@ const initState = {
 export const reposReducer = (state = initState, action) => {
     switch (action.type) {
         case 'SET_REPOS': {
-            return { ...state, repos: action.payload, isLoading: true };
+            return { ...state, repos: action.payload, isLoading: false };
         }
         case 'IS_LOADING': {
             return { ...state, isLoading: action.payload };
