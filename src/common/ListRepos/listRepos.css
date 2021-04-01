@@ -1,0 +1,15 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 25px;
+}
+
+ul {
+    margin: 10px;
+}
+
+input,
+button {
+    padding: 0.5rem;
+}

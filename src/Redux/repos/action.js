@@ -11,3 +11,17 @@ export const setLoading = (bool) => {
         payload: bool,
     };
 };
+
+export const setCheckRepo = (bool) => {
+    return {
+        type: 'IS_REPO',
+        payload: bool,
+    };
+};
+
+export const setCheckUser = (bool) => {
+    return {
+        type: 'IS_USER',
+        payload: bool,
+    };
+};

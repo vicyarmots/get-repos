@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getRepo, getLoading } from '../Redux/repos/selectors';
-import '../style.css';
+import { getRepo, getLoading } from '../../Redux/repos/selectors';
+import ItemRepo from '../ItemRepo/ItemRepo';
+import './listRepos.css';
 
 function ListRepos() {
     const repos = useSelector(getRepo);
@@ -9,13 +10,7 @@ function ListRepos() {
     return (
         <div className="list">
             {isLoading === false ? (
-                repos.map((item, index) => {
-                    return (
-                        <ul key={index}>
-                            <a href={item.html_url}>{item.name}</a>
-                        </ul>
-                    );
-                })
+                <ItemRepo repos={repos} />
             ) : (
                 <h3>Loading...</h3>
             )}

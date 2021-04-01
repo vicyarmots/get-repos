@@ -1,7 +1,7 @@
 import React from 'react';
 import './input.css';
 
-function Input({ input, inputHandler }) {
+const Input = ({ input, inputHandler }) => {
     return (
         <input
             value={input}
@@ -10,6 +10,6 @@ function Input({ input, inputHandler }) {
             onChange={inputHandler}
         />
     );
-}
+};
 
 export default Input;

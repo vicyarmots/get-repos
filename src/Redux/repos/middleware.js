@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setLoading, setRepos } from './action';
+import { setLoading, setRepos, setCheckRepo, setCheckUser } from './action';
 
 export const getRepos = (username) => async (dispatch) => {
     try {
