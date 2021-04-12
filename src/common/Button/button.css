@@ -1,5 +1,6 @@
 button {
     padding: 0.5rem;
+    margin: 0.5rem;
     color: white;
     background: rgb(31, 31, 31);
     border: 1px solid rgb(37, 37, 37);

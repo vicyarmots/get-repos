@@ -1,8 +1,8 @@
 const initState = {
     repos: [],
     isLoading: false,
-    isRepo: false,
-    isUser: false,
+    isRepository: false,
+    isError: false,
 };
 
 export const reposReducer = (state = initState, action) => {
@@ -12,18 +12,19 @@ export const reposReducer = (state = initState, action) => {
                 ...state,
                 repos: action.payload,
                 isLoading: false,
-                isRepo: false,
-                isUser: false,
+                isRepository: false,
+                isError: false,
             };
         }
+
         case 'IS_LOADING': {
             return { ...state, isLoading: action.payload };
         }
         case 'IS_REPO': {
-            return { ...state, isRepo: true };
+            return { ...state, isRepository: action.payload };
         }
         case 'IS_USER': {
-            return { ...state, isUser: true };
+            return { ...state, isError: action.payload };
         }
         default: {
             return state;
