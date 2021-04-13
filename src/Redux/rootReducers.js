@@ -1,6 +1,6 @@
-import { reposReducer } from './repos/reposReducer';
+import { repositoryReducer } from './repos/repositoryReducer';
 import { combineReducers } from 'redux';
 
-const allReducers = combineReducers({ reposReducer });
+const allReducers = combineReducers({ repositoryReducer });
 
 export default allReducers;
