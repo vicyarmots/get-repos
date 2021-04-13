@@ -1,12 +1,4 @@
-import React from 'react';
 import './itemRepo.css';
-import { useSelector } from 'react-redux';
-import {
-    getRepo,
-    getLoading,
-    getRepositoryStatus,
-    getUserStatus,
-} from '../../Redux/repos/selectors';
 
 const ItemRepo = ({ repos }) => {
     return (

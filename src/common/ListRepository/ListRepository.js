@@ -1,20 +1,19 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import {
-    getRepo,
+    getRepository,
     getLoading,
     getRepositoryStatus,
     getUserStatus,
 } from '../../Redux/repos/selectors';
 import ItemRepo from '../ItemRepo/ItemRepo';
-import './listRepos.css';
+import './listRepository.css';
 
-function ListRepos() {
-    const repos = useSelector(getRepo);
+function ListRepository() {
+    const repos = useSelector(getRepository);
     const isLoading = useSelector(getLoading);
     const isRepository = useSelector(getRepositoryStatus);
     const isError = useSelector(getUserStatus);
-    console.log(isRepository);
+
     return (
         <div className="list">
             {isLoading === false ? (
@@ -22,12 +21,12 @@ function ListRepos() {
             ) : isError === false ? (
                 <h3>Loading...</h3>
             ) : isRepository === false ? (
-                <h3>404</h3>
+                <h3>404 User not found</h3>
             ) : (
-                <h3>No repos</h3>
+                <h3>No repository</h3>
             )}
         </div>
     );
 }
 
-export default ListRepos;
+export default ListRepository;

@@ -1,6 +1,5 @@
-import React from 'react';
 import './header.css';
-import image from './git-icon.png';
+import { image } from '../../assets/images/';
 
 const Header = () => {
     return (

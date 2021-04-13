@@ -1,5 +1,5 @@
 import React from 'react';
-import ListRepos from '../common/ListRepos/ListRepos';
+import ListRepository from '../common/ListRepository/ListRepository';
 import Header from '../common/Header/Header';
 import SeacrhForm from '../common/Form/SearchForm';
 
@@ -8,7 +8,7 @@ function Form() {
         <div className="form">
             <Header />
             <SeacrhForm />
-            <ListRepos />
+            <ListRepository />
         </div>
     );
 }
