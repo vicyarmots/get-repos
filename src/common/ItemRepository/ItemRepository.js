@@ -1,6 +1,6 @@
-import './itemRepo.css';
+import './itemRepository.css';
 
-const ItemRepo = ({ repositories }) => {
+const ItemRepository = ({ repositories }) => {
     return (
         <div className="item-repo">
             {repositories.map((item, index) => {
@@ -14,4 +14,4 @@ const ItemRepo = ({ repositories }) => {
     );
 };
 
-export default ItemRepo;
+export default ItemRepository;

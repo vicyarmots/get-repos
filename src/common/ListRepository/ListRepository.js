@@ -5,7 +5,7 @@ import {
     getRepositoryStatus,
     getUserStatus,
 } from '../../redux/repos/selectors';
-import ItemRepo from '../ItemRepo/ItemRepo';
+import { ItemRepository } from '../index';
 import './listRepository.css';
 
 const ListRepository = () => {
@@ -16,7 +16,7 @@ const ListRepository = () => {
 
     const isLoadingCheck =
         isLoading === false ? (
-            <ItemRepo repositories={repositories} />
+            <ItemRepository repositories={repositories} />
         ) : (
             <h3>Loading...</h3>
         );
@@ -30,7 +30,7 @@ const ListRepository = () => {
                 isErrorCheck === false &&
                 isLoadingCheck}
             {isErrorCheck === false && isRepositoryCheck}
-            {isErrorCheck}
+            {isRepositoryCheck && isErrorCheck}
         </div>
     );
 };
