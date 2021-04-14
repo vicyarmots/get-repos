@@ -4,29 +4,35 @@ import {
     getLoading,
     getRepositoryStatus,
     getUserStatus,
-} from '../../Redux/repos/selectors';
+} from '../../redux/repos/selectors';
 import ItemRepo from '../ItemRepo/ItemRepo';
 import './listRepository.css';
 
-function ListRepository() {
-    const repos = useSelector(getRepository);
+const ListRepository = () => {
+    const repositories = useSelector(getRepository);
     const isLoading = useSelector(getLoading);
     const isRepository = useSelector(getRepositoryStatus);
     const isError = useSelector(getUserStatus);
 
+    const isLoadingCheck =
+        isLoading === false ? (
+            <ItemRepo repositories={repositories} />
+        ) : (
+            <h3>Loading...</h3>
+        );
+    const isRepositoryCheck =
+        isRepository === false ? isLoadingCheck === false : <h3>No repos</h3>;
+    const isErrorCheck = isError === true && <h3>User not found</h3>;
+
     return (
         <div className="list">
-            {isLoading === false ? (
-                <ItemRepo repos={repos} />
-            ) : isError === false ? (
-                <h3>Loading...</h3>
-            ) : isRepository === false ? (
-                <h3>404 User not found</h3>
-            ) : (
-                <h3>No repository</h3>
-            )}
+            {isRepositoryCheck === false &&
+                isErrorCheck === false &&
+                isLoadingCheck}
+            {isErrorCheck === false && isRepositoryCheck}
+            {isErrorCheck}
         </div>
     );
-}
+};
 
 export default ListRepository;

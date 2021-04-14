@@ -1,9 +1,9 @@
 import './itemRepo.css';
 
-const ItemRepo = ({ repos }) => {
+const ItemRepo = ({ repositories }) => {
     return (
         <div className="item-repo">
-            {repos.map((item, index) => {
+            {repositories.map((item, index) => {
                 return (
                     <ul key={index}>
                         <a href={item.html_url}>{item.name}</a>

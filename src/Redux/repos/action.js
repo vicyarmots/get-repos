@@ -1,6 +1,6 @@
 import { SET_REPOSITORY, IS_LOADING, IS_REPOSITORY, IS_ERROR } from './types';
 
-export const setRepos = (repos) => {
+export const setRepository = (repos) => {
     return {
         type: SET_REPOSITORY,
         payload: repos,
@@ -14,7 +14,7 @@ export const setLoading = (bool) => {
     };
 };
 
-export const setCheckRepo = (bool) => {
+export const setCheckRepository = (bool) => {
     return {
         type: IS_REPOSITORY,
         payload: bool,

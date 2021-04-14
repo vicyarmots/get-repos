@@ -1,7 +1,12 @@
 import axios from 'axios';
-import { setLoading, setRepos, setCheckRepo, setCheckUser } from './action';
+import {
+    setLoading,
+    setRepository,
+    setCheckRepository,
+    setCheckUser,
+} from './action';
 
-export const getRepos = (username) => async (dispatch) => {
+export const getRepository = (username) => async (dispatch) => {
     try {
         await dispatch(setLoading(true));
 
@@ -10,9 +15,9 @@ export const getRepos = (username) => async (dispatch) => {
         );
 
         if (response.data.length !== 0) {
-            dispatch(setRepos(response.data));
+            dispatch(setRepository(response.data));
         } else {
-            dispatch(setCheckRepo(true));
+            dispatch(setCheckRepository(true));
         }
     } catch (error) {
         dispatch(setCheckUser(true));

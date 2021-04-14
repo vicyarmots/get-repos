@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
-import { getRepos } from '../../Redux/repos/middleware';
+import { getRepository } from '../../redux/repos/middleware';
 import './serachForm.css';
 
 const SearchForm = () => {
@@ -16,7 +16,7 @@ const SearchForm = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        dispatch(getRepos(input));
+        dispatch(getRepository(input));
     };
     return (
         <form>
