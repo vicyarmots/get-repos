@@ -21,7 +21,7 @@ const ListRepository = () => {
             <h3>Loading...</h3>
         );
     const isRepositoryCheck =
-        isRepository === false ? isLoadingCheck === false : <h3>No repos</h3>;
+        isRepository === false ? isLoadingCheck === false : <h3>No repository</h3>;
     const isErrorCheck = isError === true && <h3>User not found</h3>;
 
     return (
