@@ -30,7 +30,7 @@ const ListRepository = () => {
                 isErrorCheck === false &&
                 isLoadingCheck}
             {isErrorCheck === false && isRepositoryCheck}
-            {isRepositoryCheck && isErrorCheck}
+            {isErrorCheck}
         </div>
     );
 };
